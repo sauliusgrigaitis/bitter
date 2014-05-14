@@ -1,0 +1,10 @@
+<ul>
+<% Bit.find_each do |bit| %>
+  <li>
+  <%= bit.message %>
+  <%= link_to "Edit", edit_bit_path(bit) %>
+  <%= button_to "Destroy", bit_path(bit), method: :delete %>
+</li>
+<% end %>
+</ul>
+<%= render "new", bit: Bit.new %>
